@@ -3,7 +3,7 @@ async function getConnection(){
     const connection= await mysql.createConnection({
         host:"localhost",
         user:"root",
-        password:"nayan#123",
+        password:"apk@a2z@",
         database:"MoMilk",
     })
     return connection
