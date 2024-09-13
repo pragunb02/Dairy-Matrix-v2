@@ -5,10 +5,10 @@ import cors from "cors"
 const app2 = express()
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "apk@a2z@",
-    database: "MoMilk"
+    host     : process.env.DB_HOST,
+    user     : process.env.DB_USER,
+    password : process.env.DB_PASSWORD,
+    database : process.env.DB_DATABASE
 });
 
 app2.use(express.json())
@@ -136,7 +136,8 @@ app2.post("/warehouse_update_products", (req, res) => {
 })
 
 app2.post("/product", (req, res) => {
-    const q = "INSERT INTO `MoMilk`.`product` (`PID`,`Pname`,`Price`,`categoryID`) VALUES (?);"
+    // const q = "INSERT INTO `MoMilk`.`product` (`PID`,`Pname`,`Price`,`categoryID`) VALUES (?);"
+    const q = "INSERT INTO `bvlvrpsfjxdh2per1gcz`.`product` (`PID`,`Pname`,`Price`,`categoryID`) VALUES (?);"
     const values = [req.body.PID, req.body.Pname, req.body.Price, req.body.categoryID];
     console.log(req.body.PID, req.body.Pname, req.body.Price, req.body.categoryID)
     db.query(q, [values], (err, data) => {
