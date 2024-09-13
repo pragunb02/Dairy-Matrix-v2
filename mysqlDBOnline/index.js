@@ -1,5 +1,4 @@
-var mysql      = require('mysql');
-// Create a MySQL connection using environment variables
+const mysql = require('mysql2/promise');
 const connection = mysql.createConnection({
   host     : process.env.DB_HOST,
   user     : process.env.DB_USER,

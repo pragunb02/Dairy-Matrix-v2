@@ -1,3 +1,5 @@
+-- trigger not working in production in clever cloud
+
 USE bvlvrpsfjxdh2per1gcz;
 
 DROP TRIGGER IF EXISTS stores1_BEFORE_INSERT;

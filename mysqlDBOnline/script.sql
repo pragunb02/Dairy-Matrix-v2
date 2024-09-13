@@ -1,7 +1,5 @@
--- CREATE DATABASE MoMilk;
+
 USE bvlvrpsfjxdh2per1gcz;
--- USE MoMilk;
--- SHOW GRANTS FOR 'root'@'localhost';
 
 
 #
@@ -11,7 +9,6 @@ USE bvlvrpsfjxdh2per1gcz;
 DROP TABLE IF EXISTS `category`;
 
 CREATE TABLE `category` (
-  `cat_ID` int(11) NOT NULL,
   `catName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`cat_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

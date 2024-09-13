@@ -1,5 +1,4 @@
 USE bvlvrpsfjxdh2per1gcz;
--- USE MoMilk;
 INSERT INTO `category` (`cat_ID`, `catName`) VALUES (0, 'omnis');
 INSERT INTO `category` (`cat_ID`, `catName`) VALUES (1, 'explicabo');
 INSERT INTO `category` (`cat_ID`, `catName`) VALUES (2, 'alias');
