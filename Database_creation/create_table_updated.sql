@@ -1,7 +1,5 @@
 CREATE DATABASE MoMilk;
 USE MoMilk;
--- USE MoMilk;
--- SHOW GRANTS FOR 'root'@'localhost';
 
 
 #

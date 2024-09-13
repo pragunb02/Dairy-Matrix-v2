@@ -1,6 +1,8 @@
 import express from 'express'
 import mysql from "mysql2"
 import cors from "cors"
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app2 = express()
 
@@ -10,6 +12,19 @@ const db = mysql.createConnection({
     password : process.env.DB_PASSWORD,
     database : process.env.DB_DATABASE
 });
+
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_USER:', process.env.DB_USER);
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
+console.log('DB_DATABASE:', process.env.DB_DATABASE);
+
+// db.connect((err) => {
+//     if (err) {
+//         console.error('Database connection failed:', err);
+//         return;
+//     }
+//     console.log('Database connected successfully!');
+// });
 
 app2.use(express.json())
 app2.use(cors())
@@ -137,7 +152,7 @@ app2.post("/warehouse_update_products", (req, res) => {
 
 app2.post("/product", (req, res) => {
     // const q = "INSERT INTO `MoMilk`.`product` (`PID`,`Pname`,`Price`,`categoryID`) VALUES (?);"
-    const q = "INSERT INTO `bvlvrpsfjxdh2per1gcz`.`product` (`PID`,`Pname`,`Price`,`categoryID`) VALUES (?);"
+    const q = "INSERT INTO ${process.env.DB_DATABASE}.`product` (`PID`,`Pname`,`Price`,`categoryID`) VALUES (?);"
     const values = [req.body.PID, req.body.Pname, req.body.Price, req.body.categoryID];
     console.log(req.body.PID, req.body.Pname, req.body.Price, req.body.categoryID)
     db.query(q, [values], (err, data) => {
